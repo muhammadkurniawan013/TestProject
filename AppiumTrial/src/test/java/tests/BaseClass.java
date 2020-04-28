@@ -23,7 +23,7 @@ public class BaseClass {
 			caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 			caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 			caps.setCapability(MobileCapabilityType.DEVICE_NAME, "SM-A530F/DS");
-			caps.setCapability(MobileCapabilityType.UDID, "192.168.1.3:5555");
+			caps.setCapability(MobileCapabilityType.UDID, "192.168.1.4:5555");
 			caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
 //			caps.setCapability(MobileCapabilityType.APP, "com.singaporegp.f1.staging");
 			caps.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
@@ -45,7 +45,8 @@ public class BaseClass {
 	
 	@AfterTest
 	public void teardown() {
-		
+		driver.close();
+		driver.quit();
 	}
 
 }
